@@ -6,7 +6,7 @@ import fitz
 # from pdf2image import convert_from_path
 # import pytesseract
 
-logging.getLogger("pdfminer").setLevel(logging.ERROR)
+logging.getLogger("pdfminer").setLevel(logging.ERROR) # avoid warning
 
 document = 'qatar_test_doc.pdf'
 
