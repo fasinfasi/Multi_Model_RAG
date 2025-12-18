@@ -17,6 +17,7 @@ pdf_path = os.path.join(BASE_DIR, document)
 
 #================= Text Extraction ===================
 def extract_text(pdf_path):
+    print('text extracting')
     text_blocks = []
     with pdfplumber.open(pdf_path) as pdf:
         for page_no, page in enumerate(pdf.pages):
@@ -33,6 +34,7 @@ def extract_text(pdf_path):
 
 #================ Table Extraction =============
 def extract_tables(pdf_path):
+    print('table extracting')
     tables = camelot.read_pdf(pdf_path, pages='all')
     results = []
 
@@ -50,6 +52,7 @@ def extract_tables(pdf_path):
 
 #================== Image Extraction ===============
 def extract_images(pdf_path):
+    print('image extracting')
     doc = fitz.open(pdf_path)
     images = []
 
