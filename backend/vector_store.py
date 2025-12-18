@@ -11,3 +11,4 @@ embeddings_array = np.vstack([emb for emb in embedding.embeddings if len(emb) ==
 index.add(embeddings_array)
 
 print(f"FAISS index contains {index.ntotal} vectors")
+

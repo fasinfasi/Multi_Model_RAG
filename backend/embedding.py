@@ -1,5 +1,4 @@
 import file_loader as loader
-import pandas
 from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer
 
@@ -37,3 +36,6 @@ def get_embeddings(text):
 embeddings = [get_embeddings(text) for text in texts_for_index]
 
 # print(embeddings)
+
+index_to_chunk = {i: chunks[i] for i in range(len(chunks))}
+
