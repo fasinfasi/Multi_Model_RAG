@@ -1,7 +1,6 @@
 import file_loader as loader
 import pandas
 from dotenv import load_dotenv
-import os
 from sentence_transformers import SentenceTransformer
 
 load_dotenv()
@@ -37,5 +36,4 @@ def get_embeddings(text):
 
 embeddings = [get_embeddings(text) for text in texts_for_index]
 
-# Print the embeddings to check
-print(embeddings)
+# print(embeddings)

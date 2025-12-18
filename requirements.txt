@@ -7,5 +7,6 @@ pandas
 python-dotenv
 openai
 sentence_transformers
-
+faiss-cpu
+numpy
 
