@@ -1,3 +1,21 @@
+"""Streamlit UI for Multi-Model RAG.
+
+Quick run (Windows PowerShell):
+
+1) Create and activate venv:
+    python -m venv .venv
+    .\ .venv\Scripts\Activate.ps1
+
+2) Install dependencies:
+    pip install -r requirements.txt
+
+3) Set OpenAI key and run UI:
+    $env:OPENAI_API_KEY = "your_api_key_here"
+    streamlit run frontend/ui.py
+
+Uploads are saved to `uploads/`.
+"""
+
 import streamlit as st
 import sys
 import os
@@ -11,6 +29,11 @@ from file_loader import assign_doc
 st.set_page_config(layout='centered', page_title='Multi-Model RAG')
 
 st.title("📝Multi-Model RAG System💻")
+st.markdown(
+    "[📄 Sample PDF document](https://www.dropbox.com/scl/fi/fdw4ad910v93yse0q36f8/qatar_test_doc.pdf?rlkey=p1be62h329wb3u1d2y6z68tqw&st=lgfopi0e&dl=1)",
+    unsafe_allow_html=True
+)
+
 document = st.file_uploader("Drop your pdf doc here!", type='pdf')
 query = st.text_input("Ask Your questions here...")
 btn = st.button("Ask")
@@ -29,8 +52,8 @@ if btn:
         with open(upload_path, "wb") as f:
             f.write(document.read())
 
-        # Tell backend `file_loader` which file to use (it will read from uploads)
-        assign_doc(filename)
+        # Tell backend `file_loader` which file to use (pass full path)
+        assign_doc(upload_path)
 
         # Clear cached backend modules so they re-import with the new document
         # (keep `file_loader` loaded so its `pdf_path` remains set)

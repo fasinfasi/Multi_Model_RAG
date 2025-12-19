@@ -137,4 +137,3 @@ def extract_ocr(pdf_path):
     return ocr_text
 
 # print(extract_ocr(pdf_path))
-

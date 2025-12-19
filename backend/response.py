@@ -1,3 +1,19 @@
+"""RAG response module.
+
+Provides `query_rag(query, top_k=3)` which retrieves nearest chunks from
+the FAISS index and asks the OpenAI API to generate an answer grounded in
+those chunks.
+
+Quick run (interactive):
+
+PowerShell:
+$env:OPENAI_API_KEY = "your_api_key_here"
+python -m backend.response
+
+Or run the module directly:
+python backend/response.py
+"""
+
 import os
 from openai import OpenAI
 import numpy as np
@@ -5,6 +21,7 @@ import embedding
 import vector_store
 
 client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+
 
 def query_rag(query, top_k=3):
     query_emb = np.array(
@@ -42,7 +59,6 @@ def query_rag(query, top_k=3):
 
 
 if __name__ == "__main__":
-
     while True:
         query = input("Enter your query (or 'exit' to quit): ")
         if query.lower() == "exit":

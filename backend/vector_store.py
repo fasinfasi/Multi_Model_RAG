@@ -1,3 +1,10 @@
+"""FAISS vector store builder.
+
+This module builds an in-memory FAISS index from embeddings computed in
+`backend.embedding`. It's imported by `backend.response` to perform k-NN
+searches. No CLI — used programmatically by the frontend.
+"""
+
 import faiss
 import numpy as np
 import embedding
