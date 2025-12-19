@@ -1,12 +1,13 @@
 pdfplumber==0.11.8
 camelot-py==1.0.9
 pymupdf==1.26.7
-# pdf2image==1.17.0
-# pytesseract==0.3.13
+pdf2image==1.17.0
+pytesseract==0.3.13
 pandas
 python-dotenv
 openai
 sentence_transformers
 faiss-cpu
 numpy
+streamlit
 
