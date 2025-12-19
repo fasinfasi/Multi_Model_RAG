@@ -27,7 +27,7 @@ The system uses sentence transformers to create embeddings, builds a FAISS vecto
 
 1. **Clone the repository**
    ```powershell
-   git clone <repository-url>
+   git clone https://github.com/fasinfasi/Multi_Model_RAG.git
    cd Multi_Model_RAG
    ```
 
@@ -98,8 +98,6 @@ This launches an interactive CLI where you can:
 - Enter queries directly
 - Type `exit` to quit
 - Receive answers based on the currently loaded document
-
-**Note:** Ensure `backend/file_loader.assign_doc()` has been called or a document path is set before running.
 
 ## Folder & File Structure
 
